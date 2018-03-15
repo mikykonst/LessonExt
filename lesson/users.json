@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ed Spencer",
+      "email": "dfsfa@huhsf.com",
+      "phone": "7613461379",
+      "isActive": true,
+      "date": "2018/03/18"
+    },
+    {
+      "id": 2,
+      "name": "Abe Elias",
+      "email": "dfsfa@huhsf.com",
+      "phone": "7613461379",
+      "isActive": true,
+      "date": "2006/11/25"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+    "name": "lesson",
+    "namespace": "lesson",
+    "version": "1.0.0.0",
+    "framework": "ext",
+    "toolkit": "classic",
+    "theme": "theme-triton",
+    "requires": [
+        "font-awesome"
+    ],
+    "indexHtmlPath": "index.html",
+
+    "classpath": [
+        "app"
+    ],
+    "overrides": [
+        "overrides"
+    ],
+    "fashion": {
+        "missingParameters": "error",
+        "inliner": {
+            "enable": false
+        }
+    },
+    "sass": {
+        "namespace": "lesson",
+
+        "generated": {
+            "var": "sass/save.scss",
+            "src": "sass/save"
+        },
+
+
+        "etc": [
+            "sass/etc/all.scss"
+        ],
+
+
+        "var": [
+            "sass/var/all.scss",
+            "sass/var"
+        ],
+
+        "src": [
+            "sass/src"
+        ]
+    },
+    "js": [
+        {
+            "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+        },
+        {
+            "path": "app.js",
+            "bundle": true
+        }
+    ],
+
+
+    "css": [
+        {
+            // this entry uses an ant variable that is the calculated
+            // value of the generated output css file for the app,
+            // defined in .sencha/app/defaults.properties
+            "path": "${build.out.css.path}",
+            "bundle": true,
+            "exclude": ["fashion"]
+        }
+    ],
+
+     "loader": {
+
+         "cache": false,
+
+         "cacheParam": "_dc"
+     },
+
+    "production": {
+        "output": {
+            "appCache": {
+                "enable": true,
+                "path": "cache.appcache"
+            }
+        },
+        "loader": {
+            "cache": "${build.timestamp}"
+        },
+        "cache": {
+            "enable": true
+        },
+        "compressor": {
+            "type": "yui"
+        }
+    },
+
+
+    "testing": {
+    },
+
+
+    "development": {
+        "watch": {
+            "delay": 250
+        }
+    },
+
+
+    "bootstrap": {
+        "base": "${app.dir}",
+
+        "microloader": "bootstrap.js",
+        "css": "bootstrap.css"
+    },
+
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "appCache": {
+            "enable": false
+        }
+    },
+
+
+    "cache": {
+        "enable": false,
+        "deltas": true
+    },
+
+    /**
+     * Used to automatically generate cache.manifest (HTML 5 application cache manifest)
+     * file when you build.
+     */
+    "appCache": {
+        /**
+         * List of items in the CACHE MANIFEST section
+         */
+        "cache": [
+            "index.html"
+        ],
+        /**
+         * List of items in the NETWORK section
+         */
+        "network": [
+            "*"
+        ],
+        /**
+         * List of items in the FALLBACK section
+         */
+        "fallback": []
+    },
+
+
+    "resources": [
+        {
+            "path": "resources",
+            "output": "shared"
+        }
+    ],
+
+
+
+    "archivePath": "archive",
+
+    "slicer": {
+        "js": [
+            {
+                "path": "sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ],
+        "output": {
+            "appCache": {
+                "enable": false
+            }
+        },
+        "cache": {
+            "enable": false
+        }
+    },
+    "ignore": [
+        "(^|/)CVS(/?$|/.*?$)"
+    ],
+
+
+    "id": "e35b0f67-2369-4d46-87b7-c4153066c1cd"
+}
