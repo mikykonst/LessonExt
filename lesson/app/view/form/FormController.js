@@ -8,11 +8,25 @@ Ext.define('lesson.view.form.FormController', {
     /**
      * Called when the view is created
      */
-    init: function() {
+    init: function () {
 
     },
 
+    onSave: function () {
+        let temp = this.getView().getViewModel().get('user');
+        debugger;
+        let a = this.getView().getViewModel().get('currentUser');
+        temp.set(a.getData());
+        this.getView().getViewModel().bind('{user}', function (rec) {
+            rec.commit();
+            this.getView().close();
+        });
+    },
+
     onCancel: function () {
-        this.getView().close();
+        this.getView().getViewModel().bind('{user}', function (rec) {
+            rec.reject();
+            this.getView().close();
+        });
     }
 });

@@ -15,7 +15,12 @@ Ext.define('lesson.view.grid.GridController', {
         return Ext.create({
             xtype: 'form-user',
             customConfigs: {
-                user: record.clone()
+                user: record,
+                currentUser: record.clone(),
+                setUser: function (updatedUser) {
+                    record = updatedUser;
+                    console.log(record)
+                }
             },
         }).show();
     }

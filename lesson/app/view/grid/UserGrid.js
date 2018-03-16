@@ -28,6 +28,6 @@ Ext.define('lesson.view.grid.UserGrid', {
         flex: 1
     }],
     listeners: {
-        select: 'onItemSelected'
+        rowdblclick: 'onItemSelected'
     }
 });

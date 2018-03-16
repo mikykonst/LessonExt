@@ -30,8 +30,11 @@ Ext.define('lesson.view.form.FormUser', {
             viewModel: {
                 type: 'FormViewModel',
                 data: {
-                    user: config.customConfigs.user
-
+                    user: config.customConfigs.user,
+                    currentUser: config.customConfigs.user.clone(),
+                    setUser: function (user) {
+                        return user;
+                    }
                 }
             }
         });
@@ -50,7 +53,7 @@ Ext.define('lesson.view.form.FormUser', {
                 xtype: 'textfield',
                 fieldLabel: 'Name',
                 bind: {
-                    value: '{user.name}'
+                    value: '{currentUser.name}'
                 }
             }, {
                 xtype: 'combobox',
@@ -58,7 +61,7 @@ Ext.define('lesson.view.form.FormUser', {
                 editable: false,
                 displayField: 'name',
                 bind: {
-                    value: '{user.isActive}'
+                    value: '{currentUser.isActive}'
                 },
                 store: [{
                     name: true
@@ -70,14 +73,17 @@ Ext.define('lesson.view.form.FormUser', {
                 fieldLabel: 'Date',
                 formatter: 'date("m/d/Y")',
                 bind: {
-                    value: '{user.date}'
+                    value: '{currentUser.date}'
                 }
             }, {
                 xtype: 'container',
                 layout: 'hbox',
                 items: [{
                     xtype: 'button',
-                    text: 'Save'
+                    text: 'Save',
+                    listeners: {
+                        click: 'onSave'
+                    }
                 }, {
                     xtype: 'button',
                     margin: '0 0 0 10',
