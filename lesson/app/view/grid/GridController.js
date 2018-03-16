@@ -5,28 +5,18 @@
 Ext.define('lesson.view.grid.GridController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.main',
+    alias: 'controller.GridController',
 
     requires: [
-        'lesson.view.form.FormWindow',
-        'lesson.view.form.UserForm'
+        'lesson.view.form.FormUser'
     ],
 
     onItemSelected: function (sender, record) {
         return Ext.create({
-            xtype: 'userform',
-            renderTo: Ext.getBody(),
-            viewModel: {
-                data: {
-                    User: record
-                }
-            }
-        })
-    },
-    onSave: function () {
-        this.getView().destroy();
-    },
-    onCancel: function () {
-      this.getView().destroy();
+            xtype: 'form-user',
+            customConfigs: {
+                user: record.clone()
+            },
+        }).show();
     }
 });

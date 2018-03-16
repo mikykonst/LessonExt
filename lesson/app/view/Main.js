@@ -5,15 +5,18 @@ Ext.define('lesson.view.Main', {
     extend: 'Ext.Container',
 
     requires: [
-        'lesson.view.MainModel',
+        'lesson.view.grid.GridController',
+        'lesson.view.grid.GridViewModel',
         'lesson.view.grid.UserGrid'
     ],
 
-    viewModel: 'main',
-
     items: [{
-        xtype: 'usergrid',
-        bind: '{userStore}'
-    }
-    ]
+        xtype: 'UserGrid',
+        controller: 'GridController',
+        viewModel: 'GridViewModel',
+        bind: {
+            selection: '{currentUser}',
+            store: '{userStore}'
+        }
+    }]
 });
