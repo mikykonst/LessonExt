@@ -6,7 +6,21 @@
       "email": "dfsfa@huhsf.com",
       "phone": "7613461379",
       "isActive": true,
-      "date": "2018/03/18"
+      "date": "2018/03/18",
+      "sprints": [
+        {"Jan": 6},
+        {"Feb": 4},
+        {"Mar": 86},
+        {"Apr": 66},
+        {"May": 86},
+        {"Jun": 5},
+        {"Jul": 34},
+        {"Aug": 87},
+        {"Sep": 23},
+        {"Oct": 14},
+        {"Nov": 5},
+        {"Dec": 5}
+      ]
     },
     {
       "id": 2,
@@ -14,7 +28,21 @@
       "email": "dfsfa@huhsf.com",
       "phone": "7613461379",
       "isActive": true,
-      "date": "2006/11/25"
+      "date": "2006/11/25",
+      "sprints": [
+        {"Jan": 75},
+        {"Feb": 65},
+        {"Mar": 23},
+        {"Apr": 34},
+        {"May": 87},
+        {"Jun": 5},
+        {"Jul": 34},
+        {"Aug": 87},
+        {"Sep": 23},
+        {"Oct": 14},
+        {"Nov": 5},
+        {"Dec": 15}
+      ]
     }
   ]
 }

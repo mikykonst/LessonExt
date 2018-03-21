@@ -5,18 +5,43 @@ Ext.define('lesson.view.Main', {
     extend: 'Ext.Container',
 
     requires: [
-        'lesson.view.grid.GridController',
-        'lesson.view.grid.GridViewModel',
+        'Ext.container.Container',
+        'Ext.layout.container.Fit',
+        'lesson.view.charts.Chart',
         'lesson.view.grid.UserGrid'
     ],
 
     items: [{
-        xtype: 'UserGrid',
-        controller: 'GridController',
-        viewModel: 'GridViewModel',
-        bind: {
-            selection: '{currentUser}',
-            store: '{userStore}'
-        }
+        xtype: 'container',
+        width: screen.width,
+        // minWidth: 2500,
+        layout: 'fit',
+        resizable: true,
+        items: [{
+            xtype: 'UserGrid',
+            bind: {
+                //selection: '{currentUser}',
+                store: '{userStore}'
+            }
+        }]
+    }, {
+        xtype: 'chart',
+        name: 'column',
+        width: screen.width
+    }, {
+        xtype: 'container',
+        layout: 'column',
+        width: screen.width,
+        items: [
+            {
+                xtype: 'chart',
+                name: 'pie',
+                columnWidth: 0.5
+            }, {
+                xtype: 'chart',
+                name: 'line',
+                columnWidth: 0.5
+            }
+        ]
     }]
 });

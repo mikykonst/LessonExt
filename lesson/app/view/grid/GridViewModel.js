@@ -11,16 +11,22 @@ Ext.define('lesson.view.grid.GridViewModel', {
     ],
 
     stores: {
-       userStore: {
-           type: 'users',
-           model: 'lesson.model.User',
-           autoLoad: true
-       }
+        userStore: {
+            type: 'users',
+            model: 'lesson.model.User',
+            autoLoad: true,
+            selection: '{currentUser}'
+        }
     },
 
-    setCurrentUser: function (user) {
+    /*setCurrentUser: function (user) {
       this.set('currentUser', user)
+    },*/
+    setUser: function (updatedUser) {
+        let currentUser = this.get('currentUser');
+        currentUser.set(updatedUser.getData());
     },
+
 
     data: {
         currentUser: null

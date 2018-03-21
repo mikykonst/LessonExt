@@ -4,10 +4,22 @@
 Ext.define('lesson.view.grid.UserGrid', {
     extend: 'Ext.grid.Panel',
     xtype: 'UserGrid',
-
+    //controller: 'GridController',
+    viewModel: 'GridViewModel',
     requires: [
-        'Ext.grid.column.Boolean'
+        'Ext.grid.column.Boolean',
+        'lesson.view.grid.GridController',
+        'lesson.view.grid.GridViewModel'
     ],
+
+    initConfig: function (config) {
+        Ext.apply(config, {
+           controller: {
+               type: 'GridController',
+           }
+            });
+        this.callParent(arguments);
+    },
 
     columns: [{
         text: 'Name',

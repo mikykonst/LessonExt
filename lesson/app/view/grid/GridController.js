@@ -12,16 +12,14 @@ Ext.define('lesson.view.grid.GridController', {
     ],
 
     onItemSelected: function (sender, record) {
+        this.getViewModel().set('currentUser', record);
         return Ext.create({
             xtype: 'form-user',
             customConfigs: {
                 user: record,
-                currentUser: record.clone(),
-                setUser: function (updatedUser) {
-                    record = updatedUser;
-                    console.log(record)
-                }
+                setUser: this.getViewModel().setUser.bind(this.getViewModel())
             },
-        }).show();
-    }
+        });
+    },
+    // Get function from viewModel
 });

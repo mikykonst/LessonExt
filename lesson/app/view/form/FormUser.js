@@ -4,7 +4,7 @@
 Ext.define('lesson.view.form.FormUser', {
     extend: 'Ext.window.Window',
     xtype: 'form-user',
-
+    autoShow: true,
     modal: true,
     draggable: true,
     floating: true,
@@ -21,27 +21,20 @@ Ext.define('lesson.view.form.FormUser', {
         'lesson.view.form.FormController',
         'lesson.view.form.FormViewModel'
     ],
-
     controller: 'FormController',
-
     initConfig: function (config) {
 
         Ext.apply(config, {
             viewModel: {
                 type: 'FormViewModel',
                 data: {
-                    user: config.customConfigs.user,
-                    currentUser: config.customConfigs.user.clone(),
-                    setUser: function (user) {
-                        return user;
-                    }
-                }
+                    user: config.customConfigs.user.clone(),
+                },
             }
         });
 
         this.callParent(arguments);
     },
-
 
 
     items: [{
@@ -53,7 +46,7 @@ Ext.define('lesson.view.form.FormUser', {
                 xtype: 'textfield',
                 fieldLabel: 'Name',
                 bind: {
-                    value: '{currentUser.name}'
+                    value: '{user.name}'
                 }
             }, {
                 xtype: 'combobox',
@@ -61,7 +54,7 @@ Ext.define('lesson.view.form.FormUser', {
                 editable: false,
                 displayField: 'name',
                 bind: {
-                    value: '{currentUser.isActive}'
+                    value: '{user.isActive}'
                 },
                 store: [{
                     name: true
@@ -73,7 +66,7 @@ Ext.define('lesson.view.form.FormUser', {
                 fieldLabel: 'Date',
                 formatter: 'date("m/d/Y")',
                 bind: {
-                    value: '{currentUser.date}'
+                    value: '{user.date}'
                 }
             }, {
                 xtype: 'container',
@@ -82,7 +75,7 @@ Ext.define('lesson.view.form.FormUser', {
                     xtype: 'button',
                     text: 'Save',
                     listeners: {
-                        click: 'onSave'
+                        click: 'setData'
                     }
                 }, {
                     xtype: 'button',

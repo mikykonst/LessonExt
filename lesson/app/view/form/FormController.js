@@ -13,20 +13,18 @@ Ext.define('lesson.view.form.FormController', {
     },
 
     onSave: function () {
-        let temp = this.getView().getViewModel().get('user');
-        debugger;
-        let a = this.getView().getViewModel().get('currentUser');
-        temp.set(a.getData());
-        this.getView().getViewModel().bind('{user}', function (rec) {
-            rec.commit();
-            this.getView().close();
-        });
+        let user = this.getViewModel().get('user');
+        user.commit();
+        this.getView().close();
     },
 
     onCancel: function () {
-        this.getView().getViewModel().bind('{user}', function (rec) {
-            rec.reject();
-            this.getView().close();
-        });
+        this.getView().close();
+    },
+    setData: function () {
+        let user = this.getViewModel().getData().user;
+        //this.getViewModel().getData().setUser(user);
+        this.getView().customConfigs.setUser(user);
+        this.getView().close();
     }
 });
