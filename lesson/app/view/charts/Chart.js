@@ -6,11 +6,22 @@ Ext.define('lesson.view.charts.Chart', {
     xtype: 'chart',
     controller: 'ChartViewController',
     viewModel: 'chart',
+    alias: 'AbstractChart',
+    width: '100%',
+    data: {
+        bind: '{users.data}'
+    },
+
+    requires: [
+        'lesson.view.charts.ChartViewController',
+        'lesson.view.charts.ChartViewModel'
+    ],
 
     items: [
         /* include child components here */
     ],
     listeners: {
-        afterrender: 'start'
+        boxready: 'start',
+        //afterrender:'parseJson'
     }
 });

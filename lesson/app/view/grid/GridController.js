@@ -8,6 +8,7 @@ Ext.define('lesson.view.grid.GridController', {
     alias: 'controller.GridController',
 
     requires: [
+        'lesson.view.charts.ChartsView',
         'lesson.view.form.FormUser'
     ],
 
@@ -21,5 +22,15 @@ Ext.define('lesson.view.grid.GridController', {
             },
         });
     },
+
+    onInfoSelected: function (widget) {
+        let record = widget.getWidgetRecord();
+        return Ext.create({
+            xtype: 'chartsview',
+            customConfigs: {
+                user: false
+            }
+        }).show();
+    }
     // Get function from viewModel
 });

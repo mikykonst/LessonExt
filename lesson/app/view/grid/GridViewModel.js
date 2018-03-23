@@ -18,7 +18,6 @@ Ext.define('lesson.view.grid.GridViewModel', {
             selection: '{currentUser}'
         }
     },
-
     /*setCurrentUser: function (user) {
       this.set('currentUser', user)
     },*/
@@ -26,7 +25,6 @@ Ext.define('lesson.view.grid.GridViewModel', {
         let currentUser = this.get('currentUser');
         currentUser.set(updatedUser.getData());
     },
-
 
     data: {
         currentUser: null

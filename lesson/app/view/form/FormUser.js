@@ -2,7 +2,7 @@
  * Created by mkons on 16.03.2018.
  */
 Ext.define('lesson.view.form.FormUser', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.panel.Panel',
     xtype: 'form-user',
     autoShow: true,
     modal: true,

@@ -7,17 +7,19 @@ Ext.define('lesson.view.grid.UserGrid', {
     //controller: 'GridController',
     viewModel: 'GridViewModel',
     requires: [
+        'Ext.button.Button',
         'Ext.grid.column.Boolean',
+        'Ext.grid.column.Widget',
         'lesson.view.grid.GridController',
         'lesson.view.grid.GridViewModel'
     ],
 
     initConfig: function (config) {
         Ext.apply(config, {
-           controller: {
-               type: 'GridController',
-           }
-            });
+            controller: {
+                type: 'GridController',
+            }
+        });
         this.callParent(arguments);
     },
 
@@ -38,6 +40,20 @@ Ext.define('lesson.view.grid.UserGrid', {
         editor: 'datefield',
         formatter: 'date("d/m/Y")',
         flex: 1
+    }, {
+        text: 'info',
+        xtype: 'widgetcolumn',
+        widget: {
+            xtype: 'button',
+            bubbleEvents: ['myEvent'],
+            iconCls: 'x-fa fa-info',
+            listeners: {
+               click: function () {
+                   let isHide = false;
+                   this.fireEvent('myEvent', isHide);
+               }
+            }
+        }
     }],
     listeners: {
         rowdblclick: 'onItemSelected'

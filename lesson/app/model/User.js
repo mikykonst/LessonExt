@@ -9,6 +9,6 @@ Ext.define('lesson.model.User', {
         {name: 'name', type: 'string'},
         {name: 'isActive', type: 'boolean'},
         {name: 'date', type: 'date'},
-        {name: 'sprints', type: 'auto'}
+        {name: 'data'}
     ]
 });
