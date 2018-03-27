@@ -9,5 +9,8 @@ Ext.define('lesson.view.charts.BarChart.BarChart', {
         'lesson.view.charts.BarChart.BarChartViewController'
     ],
 
-    controller: 'BarChartViewController'
+    controller: 'BarChartViewController',
+    setCurrentUser: function (val) {
+        this.userstore = val;
+    }
 });

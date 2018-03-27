@@ -15,13 +15,5 @@ Ext.define('lesson.view.charts.Chart', {
     requires: [
         'lesson.view.charts.ChartViewController',
         'lesson.view.charts.ChartViewModel'
-    ],
-
-    items: [
-        /* include child components here */
-    ],
-    listeners: {
-        boxready: 'start',
-        //afterrender:'parseJson'
-    }
+    ]
 });

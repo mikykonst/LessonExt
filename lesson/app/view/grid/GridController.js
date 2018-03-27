@@ -22,6 +22,11 @@ Ext.define('lesson.view.grid.GridController', {
             },
         });
     },
+    parseUsers: function () {
+        debugger;
+        let users = this.getViewModel().getStore();
+        console.log(users);
+    },
 
     onInfoSelected: function (widget) {
         let record = widget.getWidgetRecord();

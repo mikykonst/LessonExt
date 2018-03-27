@@ -8,18 +8,18 @@
       "isActive": true,
       "date": "2018/03/18",
       "data": [
-        { "month": "Jan", "data1": 15},
-        { "month": "Feb", "data1": 2},
-        { "month": "Mar", "data1": 21},
-        { "month": "Apr", "data1": 1},
-        { "month": "May", "data1": 8},
-        { "month": "Jun", "data1": 17},
-        { "month": "Jul", "data1": 16},
-        { "month": "Aug", "data1": 16},
-        { "month": "Sep", "data1": 19},
-        { "month": "Oct", "data1": 16},
-        { "month": "Nov", "data1": 29},
-        { "month": "Dec", "data1": 10}
+        { "month": "Jan", "data": 15},
+        { "month": "Feb", "data": 2},
+        { "month": "Mar", "data": 21},
+        { "month": "Apr", "data": 1},
+        { "month": "May", "data": 8},
+        { "month": "Jun", "data": 17},
+        { "month": "Jul", "data": 16},
+        { "month": "Aug", "data": 16},
+        { "month": "Sep", "data": 19},
+        { "month": "Oct", "data": 16},
+        { "month": "Nov", "data": 29},
+        { "month": "Dec", "data": 10}
       ]
     },
     {
@@ -30,18 +30,18 @@
       "isActive": true,
       "date": "2006/11/25",
       "data": [
-        { "month": "Jan", "data1": 20},
-        { "month": "Feb", "data1": 20},
-        { "month": "Mar", "data1": 19},
-        { "month": "Apr", "data1": 18},
-        { "month": "May", "data1": 18},
-        { "month": "Jun", "data1": 17},
-        { "month": "Jul", "data1": 16},
-        { "month": "Aug", "data1": 16},
-        { "month": "Sep", "data1": 16},
-        { "month": "Oct", "data1": 16},
-        { "month": "Nov", "data1": 15},
-        { "month": "Dec", "data1": 15}
+        { "month": "Jan", "data": 20},
+        { "month": "Feb", "data": 20},
+        { "month": "Mar", "data": 19},
+        { "month": "Apr", "data": 18},
+        { "month": "May", "data": 18},
+        { "month": "Jun", "data": 17},
+        { "month": "Jul", "data": 16},
+        { "month": "Aug", "data": 16},
+        { "month": "Sep", "data": 16},
+        { "month": "Oct", "data": 16},
+        { "month": "Nov", "data": 15},
+        { "month": "Dec", "data": 15}
       ]
     }
   ]

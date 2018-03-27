@@ -15,9 +15,17 @@ Ext.define('lesson.view.Main', {
         ],
 
         viewModel: {
-          data: {
-              isHidden: true
-          }
+            data: {
+                isHidden: true,
+                currentUser: {}
+            },
+            stores: {
+                userstore: {
+                    type: 'users',
+                    model: 'lesson.model.User',
+                    autoLoad: true,
+                }
+            }
         },
 
         items: [{
@@ -30,19 +38,37 @@ Ext.define('lesson.view.Main', {
             items: [{
                 xtype: 'UserGrid',
                 bind: {
-                    //selection: '{currentUser}',
                     store: '{userStore}'
                 }
-            }, {
-                xtype: 'chartsview',
-                bind: {
-                    hidden: '{isHidden}'
-                }
             }]
+        }, {
+            xtype: 'linechart',
+            bind: {
+                currentUser: '{currentUser}',
+                hidden: '{!isHide}'
+            },
+            flex: 1
+        }, {
+            xtype: 'container',
+            layout: 'hbox',
+            width: '100%',
+            items: [
+                {
+                    xtype: 'barchart',
+                    bind: {
+                        hidden: '{isHide}'
+                    },
+                    flex: 1
+                }, {
+                    xtype: 'piechart',
+                    flex: 1
+                }
+            ]
         }],
         listeners: {
-            myEvent: function (isHide) {
-                if(!isHide) {
+            myEvent: function (isHide, user) {
+                this.getViewModel().set('currentUser', user);
+                if (!isHide) {
                     this.getViewModel().set('isHidden', isHide);
                 } else {
                     this.getViewModel().set('isHidden', !isHide);

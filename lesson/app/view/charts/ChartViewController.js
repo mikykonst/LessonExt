@@ -13,12 +13,5 @@ Ext.define('lesson.view.charts.ChartViewController', {
     },
 
     start: function () {
-    },
-
-    parseJson: function () {
-        let userData = this.getViewModel().getDataFromJSON().items;
-        console.log(userData);
-        let l = userData.length;
-        alert(l)
     }
 });

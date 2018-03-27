@@ -12,7 +12,7 @@ Ext.define('lesson.view.charts.BarChart.BarChartViewController', {
 
     },
 
-    start: function () {
+    start: function (users) {
         let id = this.getView().getId();
         Highcharts.chart(id, {
             chart: {

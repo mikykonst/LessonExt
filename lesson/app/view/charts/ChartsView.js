@@ -7,15 +7,21 @@ Ext.define('lesson.view.charts.ChartsView', {
     xtype: 'chartsview',
     requires: [
         'Ext.container.Container',
-        'Ext.layout.container.Column',
-        'Ext.layout.container.Column',
+        'Ext.layout.container.HBox',
         'lesson.view.charts.BarChart.BarChart',
         'lesson.view.charts.LineChart.LineChart',
         'lesson.view.charts.PieChart.PieChart'
     ],
 
+    config: {
+      currentUser: null
+    },
+
     items: [{
         xtype: 'linechart',
+        bind: {
+
+        },
         flex: 1
     }, {
         xtype: 'container',
@@ -30,5 +36,8 @@ Ext.define('lesson.view.charts.ChartsView', {
                 flex: 1
             }
         ]
-    }]
+    }],
+    setCurrentUser: function (val) {
+        this.currentUser = val;
+    }
 });

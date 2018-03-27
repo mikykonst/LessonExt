@@ -8,17 +8,5 @@ Ext.define('lesson.view.charts.ChartViewModel', {
     requires: [
         'lesson.model.User',
         'lesson.store.Users'
-    ],
-
-    stores: {
-        users: {
-            model: 'lesson.model.User',
-            type: 'users',
-            autoLoad: true
-        }
-    },
-
-    getDataFromJSON: function () {
-        return this.getStore('users').getData();
-    }
+    ]
 });

@@ -13,5 +13,8 @@ Ext.define('lesson.view.charts.PieChart.PieChart', {
 
     items: [
         /* include child components here */
-    ]
+    ],
+    setCurrentUser: function (val) {
+        this.currentUser = val;
+    }
 });

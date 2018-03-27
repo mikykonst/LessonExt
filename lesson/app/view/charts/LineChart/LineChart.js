@@ -6,5 +6,8 @@ Ext.define('lesson.view.charts.LineChart.LineChart', {
     requires: [
         'lesson.view.charts.LineChart.LineChartViewController'
     ],
-
+    setCurrentUser: function (val) {
+        this.currentUser = val;
+        this.getController().start(this.currentUser);
+    }
 });

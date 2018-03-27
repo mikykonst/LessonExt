@@ -49,13 +49,14 @@ Ext.define('lesson.view.grid.UserGrid', {
             iconCls: 'x-fa fa-info',
             listeners: {
                click: function () {
-                   let isHide = false;
-                   this.fireEvent('myEvent', isHide);
+                   let isHide = true;
+                   let user = this.getWidgetRecord().getData();
+                   this.fireEvent('myEvent', isHide, user);
                }
             }
         }
     }],
     listeners: {
-        rowdblclick: 'onItemSelected'
+        rowdblclick: 'onItemSelected',
     }
 });
