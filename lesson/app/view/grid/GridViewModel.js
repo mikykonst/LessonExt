@@ -28,5 +28,14 @@ Ext.define('lesson.view.grid.GridViewModel', {
 
     data: {
         currentUser: null
+    },
+
+    getUsersAsJson: function () {
+        "use strict";
+        var res = [];
+
+        this.getStore('userStore').each((item) => res.push(item.getData()));
+
+        return res;
     }
 });

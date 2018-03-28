@@ -14,14 +14,7 @@ Ext.define('lesson.view.grid.UserGrid', {
         'lesson.view.grid.GridViewModel'
     ],
 
-    initConfig: function (config) {
-        Ext.apply(config, {
-            controller: {
-                type: 'GridController',
-            }
-        });
-        this.callParent(arguments);
-    },
+    controller: 'GridController',
 
     columns: [{
         text: 'Name',
@@ -48,11 +41,7 @@ Ext.define('lesson.view.grid.UserGrid', {
             bubbleEvents: ['myEvent'],
             iconCls: 'x-fa fa-info',
             listeners: {
-               click: function () {
-                   let isHide = true;
-                   let user = this.getWidgetRecord().getData();
-                   this.fireEvent('myEvent', isHide, user);
-               }
+               click: 'fireMethod'
             }
         }
     }],

@@ -12,7 +12,23 @@ Ext.define('lesson.view.charts.PieChart.PieChartController', {
 
     },
 
-    start: function () {
+    start: function (users) {
+        let arr = [];
+        let averageData = 0;
+        if (users !== null) {
+            users.map(user => {
+                let item = {};
+                item.name = user.name;
+                let avData = 0;
+                user.data.map(data => {
+                    avData += data.data;
+                });
+                averageData = avData/user.data.length;
+                item.y = Math.round(averageData);
+                arr.push(item);
+            });
+        }
+
         let id = this.getView().getId();
         Highcharts.chart(id, {
             chart: {
@@ -22,7 +38,7 @@ Ext.define('lesson.view.charts.PieChart.PieChartController', {
                 type: 'pie'
             },
             title: {
-                text: 'Browser market shares January, 2015 to May, 2015'
+                text: 'Users productivity'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -41,29 +57,9 @@ Ext.define('lesson.view.charts.PieChart.PieChartController', {
                 }
             },
             series: [{
-                name: 'Brands',
+                name: 'Productivity',
                 colorByPoint: true,
-                data: [{
-                    name: 'IE',
-                    y: 56.33
-                }, {
-                    name: 'Chrome',
-                    y: 24.03,
-                    sliced: true,
-                    selected: true
-                }, {
-                    name: 'Firefox',
-                    y: 10.38
-                }, {
-                    name: 'Safari',
-                    y: 4.77
-                }, {
-                    name: 'Opera',
-                    y: 0.91
-                }, {
-                    name: 'Other',
-                    y: 0.2
-                }]
+                data: arr
             }]
         });
     }

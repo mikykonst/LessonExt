@@ -3,11 +3,14 @@
  */
 Ext.define('lesson.view.charts.Chart', {
     extend: 'Ext.Component',
+
     xtype: 'chart',
+
     controller: 'ChartViewController',
     viewModel: 'chart',
-    alias: 'AbstractChart',
+
     width: '100%',
+
     data: {
         bind: '{users.data}'
     },

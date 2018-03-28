@@ -10,7 +10,8 @@ Ext.define('lesson.view.charts.BarChart.BarChart', {
     ],
 
     controller: 'BarChartViewController',
-    setCurrentUser: function (val) {
-        this.userstore = val;
+    setUserStore: function (val) {
+        this.userStore = val;
+        this.getController().start(val);
     }
 });

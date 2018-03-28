@@ -22,20 +22,11 @@ Ext.define('lesson.view.grid.GridController', {
             },
         });
     },
-    parseUsers: function () {
-        debugger;
-        let users = this.getViewModel().getStore();
-        console.log(users);
-    },
 
-    onInfoSelected: function (widget) {
-        let record = widget.getWidgetRecord();
-        return Ext.create({
-            xtype: 'chartsview',
-            customConfigs: {
-                user: false
-            }
-        }).show();
+    fireMethod: function (widget) {
+        let user = widget.getWidgetRecord().getData();
+        let userStore = this.getViewModel().getUsersAsJson();
+        widget.fireEvent('myEvent', userStore, user);
     }
     // Get function from viewModel
 });

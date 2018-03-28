@@ -13,16 +13,14 @@ Ext.define('lesson.view.charts.LineChart.LineChartViewController', {
     },
 
     start: function (currentUser) {
-        debugger;
         let months = [];
         let data = [];
         if (currentUser.data !== undefined) {
 
-            currentUser.data.forEach(each => {
+            currentUser.data.map(each => {
                 months.push(each.month);
                 data.push(each.data)
             });
-            console.log(months);
         }
 
         let id = this.getView().getId();

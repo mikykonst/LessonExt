@@ -10,11 +10,8 @@ Ext.define('lesson.view.charts.PieChart.PieChart', {
 
     controller: 'PieChartController',
     xtype: 'piechart',
-
-    items: [
-        /* include child components here */
-    ],
-    setCurrentUser: function (val) {
-        this.currentUser = val;
+    setUserStore: function (val) {
+        this.userStore = val;
+        this.getController().start(this.userStore);
     }
 });

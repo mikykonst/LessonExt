@@ -8,9 +8,6 @@ Ext.define('lesson.view.charts.ChartViewController', {
     /**
      * Called when the view is created
      */
-    init: function() {
-
-    },
 
     start: function () {
     }
